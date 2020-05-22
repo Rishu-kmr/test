@@ -1,0 +1,27 @@
+for i in range(int(input())):
+    a,b,c=map(int,input().split(' '))
+    s=1*a+2*b+3*c
+    m=s//2
+    while(m>0):
+        x=m//3
+        if(x<=a):
+            m=m-3*x
+        else:
+            if(m>0):
+                m=m-3*a
+        y=m//2
+        if(y<=b and m>0):
+            m=m-2*y
+        else:
+            if(m>0):
+                m=m-2*b
+        z=m//1 
+        if(z<=c and m>0):
+            m=m-1*z
+        else:
+            if(m>0):
+                m=m-1*c
+    if(m==0):
+        print("YES")
+    else:
+        print("NO")
